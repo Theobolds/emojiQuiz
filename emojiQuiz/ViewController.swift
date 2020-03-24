@@ -9,12 +9,49 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // initialise buttons
+    let firstButton = ATButton()
+    let secondButton = ATButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .green
+        buttonStackView(buttons: 2)
+    }
+    
+    @objc func onButton() {
+        // handle button press event
     }
 
-
+    func buttonStackView(buttons: Int) {
+        
+        let buttonStack = UIStackView()
+        
+        buttonStack.axis = .vertical
+        buttonStack.alignment = .fill
+        buttonStack.distribution = .fillEqually
+        buttonStack.spacing = 10.0
+        
+        for button in 0 ..< buttons {
+            let btn = ATButton()
+            btn.translatesAutoresizingMaskIntoConstraints = false
+            btn.setTitle(String(format: "%.0f", button), for: .normal)
+            btn.addTarget(self, action: #selector(onButton), for: .touchUpInside)
+            
+            buttonStack.addArrangedSubview(btn)
+        }
+        
+        view.addSubview(buttonStack)
+        
+        // constraints
+        buttonStack.translatesAutoresizingMaskIntoConstraints = false
+        buttonStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        buttonStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        buttonStack.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        //buttonStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        buttonStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+    }
 }
 

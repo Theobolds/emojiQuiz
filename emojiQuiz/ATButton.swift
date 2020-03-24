@@ -24,6 +24,10 @@ class ATButton: UIButton {
     
     private func setupButton() {
         // button styling
+        titleLabel?.font = UIFont(name: "Futura", size: 30)
+        showsTouchWhenHighlighted = true
+        layer.cornerRadius = 10
+        backgroundColor = .lightGray
     }
 
 }
