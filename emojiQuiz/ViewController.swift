@@ -9,19 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    // initialise buttons
-    let firstButton = ATButton()
-    let secondButton = ATButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = .black
         buttonStackView(buttons: 2)
     }
     
     @objc func onButton() {
         // handle button press event
+        print("button pressed")
     }
 
     func buttonStackView(buttons: Int) {
@@ -49,7 +46,6 @@ class ViewController: UIViewController {
         buttonStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         buttonStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
         buttonStack.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        //buttonStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         buttonStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
     }
