@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         emoji.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         emoji.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
         emoji.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        emoji.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        emoji.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
     }
     
     @objc func onButton() {
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         buttonStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         buttonStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
         buttonStack.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        buttonStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        buttonStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         
     }
 }
