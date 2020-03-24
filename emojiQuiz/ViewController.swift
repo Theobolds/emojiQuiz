@@ -9,11 +9,30 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let emoji = UILabel()
+    let emojiArray = ["🐝", "🦆", "🦉", "🐠", "🐖", "🐓"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
+        emojiView()
         buttonStackView(buttons: 2)
+    }
+    
+    func emojiView() {
+        emoji.text = emojiArray.randomElement()
+        emoji.font = emoji.font.withSize(150)
+        emoji.textAlignment = .center
+        
+        view.addSubview(emoji)
+        
+        //constraints
+        emoji.translatesAutoresizingMaskIntoConstraints = false
+        emoji.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        emoji.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        emoji.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        emoji.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
     @objc func onButton() {
