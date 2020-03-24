@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let emoji = UILabel()
-    let emojiArray = ["🐝", "🦆", "🦉", "🐠", "🐖", "🐓"]
+    let emojiArray = ["🐝", "🦆", "🦉", "🐠", "🐖", "🐓", "🦮", "🐄", "🦀", "🐜"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
