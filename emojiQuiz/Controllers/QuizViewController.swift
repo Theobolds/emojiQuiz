@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class QuizViewController: UIViewController {
     
     var quizBrain = QuizBrain()
     let emoji = UILabel()
