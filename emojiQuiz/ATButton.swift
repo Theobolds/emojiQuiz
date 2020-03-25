@@ -27,7 +27,7 @@ class ATButton: UIButton {
         titleLabel?.font = UIFont(name: "Futura", size: 30)
         showsTouchWhenHighlighted = true
         layer.cornerRadius = 10
-        backgroundColor = .lightGray
+        backgroundColor = .gray
     }
 
 }
