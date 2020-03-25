@@ -9,14 +9,16 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    
+    let resultLabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        resultLabel.text = "0/10"
     }
     
-
+    
     /*
     // MARK: - Navigation
 

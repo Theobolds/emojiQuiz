@@ -17,7 +17,7 @@ struct QuizBrain {
         Question(q: "🐖", a: ["Bee", "Pig"], correct: "Pig"),
         Question(q: "🐓", a: ["Hen", "Crab"], correct: "Hen"),
         Question(q: "🦮", a: ["Dog", "Ant"], correct: "Dog"),
-        Question(q: "🐄", a: ["Dog", "Cat"], correct: "Cat"),
+        Question(q: "🐄", a: ["Dog", "Cow"], correct: "Cow"),
         Question(q: "🦀", a: ["Crab", "Owl"], correct: "Crab"),
         Question(q: "🐜", a: ["Ant", "Fish"], correct: "Ant")
     ]

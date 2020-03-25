@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  QuizViewController.swift
 //  emojiQuiz
 //
 //  Created by alex theobold on 24/03/2020.
