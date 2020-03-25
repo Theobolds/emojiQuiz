@@ -72,17 +72,16 @@ class QuizViewController: UIViewController {
     }
     
     func updateUI() {
-        
         if quizBrain.questionNumber == 0 {
             let vc = ResultViewController()
-            vc.finalScore = String(format: "%.0f", quizBrain.score)
+            vc.finalScore = quizBrain.score
+            print(quizBrain.score)
             self.present(vc, animated: true, completion: nil)
+            quizBrain.score = 0
         }
         
         emojiView()
         buttonStackView(buttons: 2)
-        
-        
     }
 }
 

@@ -12,17 +12,18 @@ class ResultViewController: UIViewController {
     
     let resultLabel = UILabel()
     let retryButton = ATButton()
-    var finalScore = "0"
+    var finalScore = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
+        resultLabel.text = String(finalScore)
+        print(finalScore)
         viewScore()
         closeView()
     }
     
     func viewScore() {
-        resultLabel.text = finalScore
         resultLabel.font = resultLabel.font.withSize(150)
         resultLabel.textAlignment = .center
         

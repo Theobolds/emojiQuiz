@@ -33,20 +33,16 @@ struct QuizBrain {
         if questionNumber < quiz.count - 1 {
             questionNumber += 1
         } else {
-            //TODO: go to results view controller - segue to show modally
             questionNumber = 0
         }
     }
     
     mutating func checkAnswer(textInput: String) {
-        
         if textInput == quiz[questionNumber].correctAnswer {
-            score += 1
             nextQuestion()
-            print(score)
+            score += 1
         } else {
             nextQuestion()
-            print(score)
         }
     }
 }
