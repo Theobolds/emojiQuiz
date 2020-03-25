@@ -35,9 +35,9 @@ class ViewController: UIViewController {
         emoji.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
     }
     
-    @objc func onButton() {
+    @objc func onButton(sender: ATButton) {
         // handle button press event
-        print("button pressed")
+        checkAnswer(textInput: sender.titleLabel!.text!)
     }
 
     func buttonStackView(buttons: Int) {
@@ -52,6 +52,7 @@ class ViewController: UIViewController {
         for button in 0 ..< buttons {
             let btn = ATButton()
             btn.translatesAutoresizingMaskIntoConstraints = false
+            btn.tag = button.self
             btn.setTitle(quizBrain.quiz[quizBrain.questionNumber].answer[button], for: .normal)
             btn.addTarget(self, action: #selector(onButton), for: .touchUpInside)
             
@@ -67,6 +68,10 @@ class ViewController: UIViewController {
         buttonStack.heightAnchor.constraint(equalToConstant: 200).isActive = true
         buttonStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         
+    }
+    
+    func checkAnswer(textInput: String) {
+        print(textInput)
     }
 }
 
