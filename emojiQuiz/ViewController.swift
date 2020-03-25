@@ -49,10 +49,10 @@ class ViewController: UIViewController {
         buttonStack.distribution = .fillEqually
         buttonStack.spacing = 10.0
         
-        for button in 0 ..< buttons {
+        for _ in 0 ..< buttons {
             let btn = ATButton()
             btn.translatesAutoresizingMaskIntoConstraints = false
-            btn.setTitle(String(format: "%.0f", button), for: .normal)
+            btn.setTitle(emoji.text, for: .normal)
             btn.addTarget(self, action: #selector(onButton), for: .touchUpInside)
             
             buttonStack.addArrangedSubview(btn)
