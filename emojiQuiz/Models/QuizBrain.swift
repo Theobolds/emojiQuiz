@@ -21,5 +21,11 @@ struct QuizBrain {
         Question(q: "🦀", a: ["Crab", "Owl"], correct: "Crab"),
         Question(q: "🐜", a: ["Ant", "Fish"], correct: "Ant")
     ]
+    
+    var questionNumber = 0
+    
+    func getQuestionText() -> String  {
+        return quiz[questionNumber].text
+    }
 }
 

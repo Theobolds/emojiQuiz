@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var quizBrain = QuizBrain()
     let emoji = UILabel()
-    let emojiArray = ["🐝", "🦆", "🦉", "🐠", "🐖", "🐓", "🦮", "🐄", "🦀", "🐜"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
     
     func emojiView() {
-        emoji.text = emojiArray.randomElement()
+        emoji.text = quizBrain.getQuestionText()
         emoji.font = emoji.font.withSize(150)
         emoji.textAlignment = .center
         
@@ -49,10 +49,10 @@ class ViewController: UIViewController {
         buttonStack.distribution = .fillEqually
         buttonStack.spacing = 10.0
         
-        for _ in 0 ..< buttons {
+        for button in 0 ..< buttons {
             let btn = ATButton()
             btn.translatesAutoresizingMaskIntoConstraints = false
-            btn.setTitle(emoji.text, for: .normal)
+            btn.setTitle(quizBrain.quiz[quizBrain.questionNumber].answer[button], for: .normal)
             btn.addTarget(self, action: #selector(onButton), for: .touchUpInside)
             
             buttonStack.addArrangedSubview(btn)
