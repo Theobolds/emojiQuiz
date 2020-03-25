@@ -37,7 +37,8 @@ class ViewController: UIViewController {
     
     @objc func onButton(sender: ATButton) {
         // handle button press event
-        checkAnswer(textInput: sender.titleLabel!.text!)
+        quizBrain.checkAnswer(textInput: sender.titleLabel!.text!)
+        updateUI()
     }
 
     func buttonStackView(buttons: Int) {
@@ -70,8 +71,9 @@ class ViewController: UIViewController {
         
     }
     
-    func checkAnswer(textInput: String) {
-        print(textInput)
+    func updateUI() {
+        emojiView()
+        buttonStackView(buttons: 2)
     }
 }
 
