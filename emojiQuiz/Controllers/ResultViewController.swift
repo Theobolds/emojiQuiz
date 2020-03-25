@@ -11,22 +11,47 @@ import UIKit
 class ResultViewController: UIViewController {
     
     let resultLabel = UILabel()
+    let retryButton = ATButton()
+    var finalScore = "0"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        resultLabel.text = "0/10"
+        view.backgroundColor = .lightGray
+        viewScore()
+        closeView()
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func viewScore() {
+        resultLabel.text = finalScore
+        resultLabel.font = resultLabel.font.withSize(150)
+        resultLabel.textAlignment = .center
+        
+        view.addSubview(resultLabel)
+        
+        //constraints
+        resultLabel.translatesAutoresizingMaskIntoConstraints = false
+        resultLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        resultLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        resultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        resultLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
     }
-    */
-
+    
+    @objc func tryAgain() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func closeView() {
+        retryButton.setTitle("Try Again", for: .normal)
+        retryButton.addTarget(self, action: #selector(tryAgain), for: .touchUpInside)
+        
+        view.addSubview(retryButton)
+        
+        // constraints
+        retryButton.translatesAutoresizingMaskIntoConstraints = false
+        retryButton.translatesAutoresizingMaskIntoConstraints = false
+        retryButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        retryButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        retryButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        retryButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+    }
 }

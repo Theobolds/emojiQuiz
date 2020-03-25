@@ -41,11 +41,12 @@ struct QuizBrain {
     mutating func checkAnswer(textInput: String) {
         
         if textInput == quiz[questionNumber].correctAnswer {
-            print("Correct")
             score += 1
             nextQuestion()
+            print(score)
         } else {
             nextQuestion()
+            print(score)
         }
     }
 }
